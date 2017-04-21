@@ -1,0 +1,102 @@
+input {
+    & {
+        box-shadow: none;
+        border: 0;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        font-size: 1.2em;
+        margin-top: 25px;
+        height: 25px;
+    }
+    @include hover-state {
+        box-shadow: none;
+        border-color: #000;
+    }
+}
+.basicForm {
+    margin-top: 5%;
+    margin-bottom:5%;
+    margin-left: 20%;
+    width: 100%;
+    background-color: white;
+    opacity: 0.9;
+    box-shadow: 0 0 20px $login-box-shadow;
+}
+.roundedCorner {
+    display: inline-block;
+    padding: 30px;
+    30px;
+    30px;
+    30px;
+    width: 60%;
+    height: 50%;
+    border: solid 1px #555;
+    background-color: #e7e7e7;
+    box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
+}
+.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: grey;
+}
+.img-responsive {
+    max-width: 90%;
+    max-height: auto;
+}
+/*.table {
+    text-align: center;
+}*/
+.tableHeader {
+    text-align: center;
+}
+.rowImg {
+    max-width: 10%;
+    max-height: 10%;
+}
+.advanceForm {
+    margin-left: 300px;
+}
+/*.form-control {
+    min-width: 370px;
+    width: 25px !important;
+}*/
+div.centerpanel {
+    font-size: 19px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.leftpanel {
+    display: inline-block;
+    width: 50%;
+}
+.rightpanel {
+    display: inline-block;
+    width: 50%;
+}
+.textbox {
+    height: 25px;
+    width: 275px;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: darkred;
+    outline: 0;
+}
+
+.popupImage{
+    width:50%; 
+}
+.popupImageContainer{
+    margin-left:160px;
+}
+.centerData{
+    text-align: center;
+}
+.modal{
+        margin-top: 10%;
+}

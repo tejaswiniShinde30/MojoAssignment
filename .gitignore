@@ -1,0 +1,11 @@
+node_modules
+*.zip
+.sass*
+npm-debug.log
+dist
+app/scripts/script.min*.js
+app/scripts/vendor.min*.js
+app/styles/css
+app/scripts/config/config.js
+app/styles/css/*.css
+app/index.html

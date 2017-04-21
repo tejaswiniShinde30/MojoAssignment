@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+<div>
+    
+    <form class="roundedCorner basicForm" name="editForm">
+         <label for="initiative_photo"><h1>Edit Profile</h1></label>
+              <div class="row seperateTextBox centerpanel ">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Id:
+                <input type="text" class="form-control leftpanel textbox" id="id" placeholder="ID" required name ="id" ng-model="ctrl.user.id" disabled="disabled">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role:
+                  <input type="text" class=" form-control  rightpanel textbox" id="role" placeholder="role" required name ="role" ng-model="ctrl.user.role" disabled="disabled">
+              </div>
+        
+        
+            <div class=" row seperateTextBox centerpanel">
+                First Name:
+                <input type="text" class="form-control leftpanel textbox" id="fName" placeholder="fName" required name ="fName" ng-model="ctrl.user.fName">
+                Last Name:
+                  <input type="text" class="form-control rightpanel textbox" id="lName" placeholder="lName" required name ="lName" ng-model="ctrl.user.lName">
+              </div>
+        
+        
+            <div class="row seperateTextBox centerpanel">
+                Username:
+                <input type="text" class="form-control leftpanel textbox" id="username" placeholder="username" required name ="username" ng-model="ctrl.user.username">
+                Password:
+                  <input type="password" class="form-control rightpanel textbox" id="password" placeholder="password" required name ="password" ng-model="ctrl.user.password">
+              </div>
+        
+        
+        
+        <div class="row seperateTextBox centerpanel">
+            Status:
+                <input type="text" class="form-control leftpanel textbox" id="status" placeholder="status" required name ="status" ng-model="ctrl.user.status" disabled="disabled">
+              </div>
+        
+        
+        <div class=" row">
+            <button type="submit" class="btn btn-success pull-right" ng-click="ctrl.update()" ng-disabled="editForm.$pristine ">Update</button>
+        </div>
+    </form>
+</div>

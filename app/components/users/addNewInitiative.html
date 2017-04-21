@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+<div class="sub-nav clearfix " ng-controller="AddNewInitiativesController as ctrl">
+    <ul class="nav navbar-nav ">
+        <li ui-sref-active="active">
+            <a ui-sref="App.MyInitiative.AddNewInitiative.Basic" ng-class="{'disabled':true}">Basic</a>
+        </li>
+        <li ui-sref-active="active"  >
+            <a ui-sref="App.MyInitiative.AddNewInitiative.Advanced" ng-class="{'disabled':true}">Advanced</a>
+        </li>
+        <li ui-sref-active="active" >
+            <a ui-sref="App.MyInitiative.AddNewInitiative.Preview" ng-class="{'disabled':true}">Preview</a>
+        </li>
+    </ul>
+</div>
+<div ui-view></div>

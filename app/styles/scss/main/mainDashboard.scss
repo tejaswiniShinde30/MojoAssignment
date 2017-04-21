@@ -1,0 +1,207 @@
+@import "mainCommon";
+
+#main-dashboard {
+    & {
+        margin-bottom: 30px;
+    }
+
+    .hand-pointer {
+        cursor: pointer;
+    }
+
+    .header {
+        & {
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-weight: 100;
+            @include mobile {
+                text-align: center;
+            }
+        }
+
+        .order-test {
+            @include mobile {
+                float: none;
+            }
+
+            button {
+                margin-top: 15px;
+                float: right;
+                @include mobile {
+                    width: 100%;
+                    float: none;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .dashboardRow {
+        & {
+            margin-top: 25px;
+        }
+    }
+
+    .tooltip-inner {
+        max-width: 400px;
+        background-color: $brand-primary;
+    }
+
+    .dasboard-data-indicator {
+        & {
+            background-color: $brand-primary;
+            cursor: pointer;
+            @include tablet-all {
+                margin-bottom: 30px;
+            }
+        }
+
+        .active {
+            &.dashboard-item {
+                background-color: darken($brand-primary,20%);
+                position: relative;
+            }
+
+            .dashboard-badge {
+                .dashboard-badge-number {
+                    background-color: darken($brand-primary,35%);
+                }
+            }
+            @include desktop-all {
+                &:after {
+                    content: "";
+                    height: 0;
+                    width: 0;
+                    border-width: 20px;
+                    border-color: transparent;
+                    border-style: solid;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    border-bottom-width: 0;
+                    border-top-color: darken($brand-primary,20%);
+                }
+            }
+            @include mobile-tablet {
+                &:after {
+                    content: "";
+                    height: 0;
+                    width: 0;
+                    border-width: 20px;
+                    border-color: transparent;
+                    border-style: solid;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    border-left-width: 0;
+                    border-right-color: white;
+                }
+            }
+        }
+
+        .dashboard-item {
+            & {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                @include tv {
+                    min-height: 90px;
+                }
+                @include desktop {
+                    min-height: 115px;
+                }
+                @include tablet {
+                    min-height: 80px;
+                }
+                @include mobile {
+                    min-height: 65px;
+                }
+                @include hover-state {
+                    background-color: darken($brand-primary,10%);
+                }
+            }
+            @include desktop-all {
+                & {
+                    border-right: 2px solid white;
+                }
+
+                &:last-child {
+                    border-right-width: 0;
+                }
+            }
+            @include tablet {
+                &:nth-child(2n+1) {
+                    border-right: 2px solid white;
+                }
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                    border-bottom: 2px solid white;
+                }
+            }
+            @include mobile {
+                & {
+                    border-bottom: 2px solid white;
+                }
+
+                &:last-child {
+                    border-bottom-width: 0;
+                }
+            }
+        }
+
+        .dashboard-label {
+            & {
+                @include tv {
+                    padding-left: 0;
+                }
+                @include tablet {
+                    padding-left: 0;
+                }
+            }
+
+            .dashboard-label-text {
+                font-weight: 100;
+                color: white;
+                font-size: 22px;
+                @include desktop {
+                    font-size: 20px;
+                }
+                @include tablet {
+                    font-size: 20px;
+                    padding-top: 15px;
+                }
+                @include mobile {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .dashboard-badge {
+            & {}
+
+            .dashboard-badge-number {
+                background-color: darken($brand-primary,5%);
+                border-radius: 50%;
+                color: white;
+                font-weight: 900;
+                font-size: 36px;
+                padding: 5px 10px;
+                @include tablet {
+                    font-size: 30px;
+                }
+                @include mobile {
+                    font-size: 25px;
+                }
+                @include hover-state {
+                    background-color: $brand-primary;
+                }
+            }
+        }
+    }
+}

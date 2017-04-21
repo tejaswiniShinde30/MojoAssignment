@@ -1,0 +1,49 @@
+<div ng-controller="usersController as ctrl">
+
+    <div class="container-fluid" id="main-dashboard" st-pipe="ctrl.callServer" st-table="ctrl.displayed">
+
+        <div class="container-fluid dashboardRow">
+            <div class="row">
+                <div class="table-responsive app-dashboard">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th st-sort="id">Sr No.</th>
+                                <th st-sort="userName">User Name</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-show="!ctrl.isLoading">
+                            <tr ng-repeat="row in ctrl.displayed" class="center">
+                                <td>{{row.id}}</td>
+                                <td>{{row.firstName}} {{row.lastName}}</td>
+                                <td>{{row.username}}</td>
+                                <td><button ng-class="row.status=='Active' ? 'hand-pointer btn btn-success btn-xs' : 'hand-pointer btn btn-warning btn-xs'">{{row.status}}</button></td>
+                                <td><button ng-class="row.action=='Unblock' ? 'hand-pointer btn btn-success btn-xs' : 'hand-pointer btn btn-warning btn-xs'" ng-click="ctrl.adminAction(row.id)">{{row.action}}</button></td>
+                            </tr>
+                        </tbody>
+                        <tbody ng-show="ctrl.isLoading">
+                            <tr>
+                                <td colspan="9" class="text-center">Loading ...
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody ng-show="ctrl.noRecords">
+                            <tr>
+                                <td colspan="9" class="text-center">No records to show
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="app-dashboard-pagination" st-template="common/template/dashboardPagination.html" st-pagination=""></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,9 @@
+{
+    "url": {
+        "base": "/api",
+        "login": "/login",
+        "users":"/users",
+        "adminAction" : "/action"
+    }
+
+}

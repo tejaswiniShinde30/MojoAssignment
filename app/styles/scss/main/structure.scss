@@ -1,0 +1,262 @@
+
+@import "mainCommon";
+
+
+.primary-nav {
+    & {
+        margin-bottom: -1px;
+    }
+
+    .navbar-brand {
+        & {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    .container-fluid {
+        & {
+            padding-top: 5px;
+        }
+    }
+
+    .primary-search-select-addon {
+        & {
+            border: 0;
+            padding: 0;
+            border-right: 1px solid $input-border-color;
+        }
+    }
+
+    .primary-search-container {
+        & {
+            border: 1px solid $input-border-color;
+        }
+
+        button,
+        input,
+        select {
+            background-color: $primary-search-bgc;
+            border-width: 0;
+        }
+
+        button,
+        input,
+        select {
+            box-shadow: none !important;
+            border-color: $input-border-color;
+            outline: 0 !important;
+            background-color: $primary-search-bgc !important;
+        }
+
+        #primary-search-button {
+            border-radius: 0;
+            padding-left: 5px;
+            height: 34px;
+        }
+
+        input {
+            padding-right: 0;
+        }
+        //        Hack to expand #14272 start
+        .primary-search-button-group,
+        .primary-search-select-addon {
+            width: 1%;
+        }
+
+        .primary-search-container {
+            width: 100%;
+        }
+        //        Hack to expand #14272 start
+    }
+
+    .user-info {
+        .profile {
+            cursor: pointer;
+            color: $font-default;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                @include hover-state {
+                    color: inherit;
+                }
+            }
+
+            .user-name {
+                padding-left: 5px;
+
+                &-container:before {
+                    @include seperator($font-default);
+                }
+            }
+        }
+        @include mobile {
+            text-align: center;
+
+            ul {
+                text-align: center;
+            }
+        }
+    }
+    @include mobile {
+        .container-fluid {
+            padding-bottom: 0;
+        }
+
+        .burger-button {
+            border: 1px solid $brand-primary;
+            background-color: white;
+
+            .icon-bar {
+                background-color: $brand-primary;
+            }
+
+            &.showMenu {
+                background-color: $brand-primary;
+
+                .icon-bar {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+.secondary-nav {
+    & {
+        background-color: $secondary-nav-bgc;
+        font-weight: bold;
+    }
+
+    li > a {
+        color: $font-default;
+        @include hover-state {
+            color: darken( $font-default,20%);
+        }
+    }
+
+
+    .active > a {
+        background-color: $brand-primary;
+        color: white;
+        @include hover-state {
+            background-color: $brand-primary;
+            color: darken(white,20%);
+        }
+    }
+    @include mobile {
+        background-color: transparent;
+
+        li > a {
+            background-color: $secondary-nav-bgc;
+            text-align: center;
+        }
+
+        .navbar-nav {
+            margin-bottom: 0;
+        }
+    }
+    @include tablet-all {
+        margin-left: -30px;
+        margin-right: -30px;
+        margin-top: 10px;
+        background-color: $secondary-nav-bgc;
+
+        li > a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}
+
+.sub-nav {
+    & {
+        background-color: $brand-primary;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    li {
+
+        &.active {
+            background-color: inherit;
+            @include active-arrow;
+
+            a {
+                color: white;
+                @include hover-state {
+                    color: darken( white,20%);
+                }
+            }
+        }
+
+        a {
+          color: lighten($font-label,20%);
+            @include hover-state {
+                background-color: $brand-primary;
+                color: $font-label;
+            }
+
+        }
+
+        & + li:before {
+            @include seperator(lighten($font-label,20%));
+        }
+    }
+    @include mobile {
+        .navbar-nav {
+            margin-top: 0;
+            margin-bottom: -1px;
+        }
+
+        li {
+            display: table-cell;
+            width: 1%;
+
+            a {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}
+
+footer {
+    & {
+        background-color: $brand-primary;
+        height: 50px;
+     position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    p {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 0;
+
+        a {
+            color: lighten( $font-label,20%);
+            @include hover-state {
+                color: $font-label;
+            }
+        }
+    }
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin-bottom: -50px;
+}

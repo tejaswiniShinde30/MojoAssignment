@@ -1,0 +1,18 @@
+<div ng-if="pages.length >= 2">
+
+    <div class="paginationItems">
+
+        <span name="span" ng-class="{disabled:currentPage==1}" class="btn  glyphicon glyphicon-step-backward" ng-click="selectPage(1)"></span>
+
+        <span name="span" ng-class="{disabled:currentPage==1}" class="btn  glyphicon glyphicon-triangle-left" ng-click="selectPage(currentPage-1)"></span>
+
+        <span>{{currentPage}}
+            of
+            {{numPages}}</span>
+
+        <span name="span" ng-class="{disabled:currentPage==numPages}" class="btn  glyphicon glyphicon-triangle-right" ng-click="selectPage(currentPage+1)"></span>
+
+        <span name="span" class="btn  glyphicon glyphicon-step-forward" ng-class="{disabled:currentPage==numPages}" ng-click="selectPage(numPages)"></span>
+    </div>
+
+</div>

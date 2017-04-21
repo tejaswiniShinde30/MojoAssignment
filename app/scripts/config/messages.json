@@ -1,0 +1,11 @@
+{
+    "login": {
+        "failed": "The email address or password you entered is not valid."
+    },
+    "validation": {
+        "required": "This field is required",
+        "minLength": "This field is too short",
+        "maxLength": "This field is too long",
+        "email": "This needs to be a valid email"
+    }
+}

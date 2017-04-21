@@ -1,0 +1,53 @@
+<div ng-controller="userInitiativesController as ctrl">
+
+    <div class="container-fluid" id="main-dashboard" st-pipe="ctrl.callServer" st-table="ctrl.displayed">
+
+        <div class="container-fluid dashboardRow">
+            <div class="row">
+                <div class="table-responsive app-dashboard">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th st-sort="id">Sr No.</th>
+                                <th st-sort="title">Title</th>
+                                <th st-sort="desc">Description</th>
+                                <th>Image of the initiative</th>
+                                <th st-sort="noOfUsersFollowing">No. of users following </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody ng-show="!ctrl.isLoading">
+                                <tr ng-repeat="row in ctrl.displayed" class="center">
+                                    <td>{{row.id}}</td>
+                                    <td>{{row.title}}</td>
+                                    <td> {{row.desc}}</td>
+                                    <td><a class="hand-pointer" ng-click="ctrl.openPopup(row.img)">Initiative Image</a></td>
+                                    <!--<td><a class="hand-pointer">{{row.img}}</a></td>-->
+                                    <td>{{row.noOfUsersFollowing}}</td>
+                                    <td><button ng-class="row.status=='Follow' ? 'hand-pointer btn btn-success btn-xs' : 'hand-pointer btn btn-warning btn-xs'" ng-click="ctrl.followInitiative(row.id)">{{row.status}}</button></td>
+                                </tr>
+                            </tbody>
+                            <tbody ng-show="ctrl.isLoading">
+                                <tr>
+                                    <td colspan="9" class="text-center">Loading ...
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody ng-show="ctrl.noRecords">
+                                <tr>
+                                    <td colspan="9" class="text-center">No records to show
+                                    </td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="app-dashboard-pagination" st-template="common/template/dashboardPagination.html" st-pagination=""></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

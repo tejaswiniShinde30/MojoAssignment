@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="styles/css/login.min.css">
+<div class="wrapper" ng-controller="LoginController as LoginCtrl">
+    <div class="login-panel">
+        <div class="login-heading">
+            <img src="images/UserInitiatives.png" class="img-responsive" alt="" />
+        </div>
+        <!-- /.login-heading -->
+        <div class="login-body">
+            <div class="failedLogin" ng-if="LoginCtrl.loginFailed">
+                <span class="glyphicon glyphicon glyphicon-exclamation-sign"></span><span class="message">The email address or password you entered is not valid</span>
+            </div>
+            <div class="failedLogin" ng-if="LoginCtrl.blockedUser">
+                <span class="glyphicon glyphicon glyphicon-exclamation-sign"></span><span class="message">Administartor has blocked you</span>
+            </div>
+            <!-- /.failedLogin -->
+            <form name="loginForm" id="loginForm" novalidate="" ng-submit="LoginCtrl.login()">
+                <div class="form-group" ng-class="{'has-error':(loginForm.username.$touched  && loginForm.username.$invalid) ,'has-success':(loginForm.username.$dirty && loginForm.username.$valid) }"><input type="email" id="username" class="form-control" name="username" ng-model="LoginCtrl.credentials.username" required />
+                    <label for="username" class="control-label">User Name</label>
+                    <div error-msg form-element="loginForm.username" custom-msg="MainCtrl.messages"></div>
+                </div>
+                <!-- /.form-group -->
+                <div class="form-group" ng-class="{'has-error':(loginForm.password.$touched  && loginForm.password.$invalid) ,'has-success':(loginForm.password.$dirty && loginForm.password.$valid) }"><input type="password" id="password" class="form-control" name="password" ng-model="LoginCtrl.credentials.password" required />
+                    <label for="password" class="control-label">Password</label>
+                    <div error-msg form-element="loginForm.password" custom-msg="MainCtrl.messages"></div>
+                </div>
+                <!-- /.form-group -->
+                <button class="btn btn-info btn-block loginSubmit" ng-disabled="(loginForm.$pristine || loginForm.$invalid || LoginCtrl.isSigningIn)">{{LoginCtrl.isSigningIn ? 'SIGNING IN...':'SIGN IN'}}</button>
+                <p class="forgot-password">
+                    <a href="">Forgot Password?</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- /.login-panel -->
+    <p class="login-footer text-center">
+        <a href="">&copy; www.userinitiatives.com</a>
+        <a class="rights">All rights reserved.</a>
+    </p>
+    <p class="text-center login-footer">
+        <a href="">Privacy</a>
+        <a href="">Contact Us</a>
+        <a href="">Terms of Condition</a>
+    </p>
+    <!-- /.login-body -->
+</div>
+<!-- /.wrapper -->

@@ -1,0 +1,174 @@
+@import "../common/common";
+
+body {
+    background-image: url("../../images/login-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    @media screen and (max-width: 550px) {
+        width: 50%;
+    }
+    @media screen and (min-width: 550px) and (max-width: 767px) {
+        width: 40%;
+    }
+    @include tablet {
+        width: 35%;
+    }
+    @include desktop {
+        width: 35%;
+    }
+    @include tv {
+        width: 25%;
+    }
+
+    .login-panel {
+        background-color: white;
+        opacity: 0.9;
+        box-shadow: 0 0 20px $login-box-shadow;
+        @media screen and (max-width: 550px) {
+            padding: 25px;
+        }
+        @media screen and (min-width: 550px) and (max-width: 767px) {
+            padding: 30px;
+        }
+        @include tablet {
+            padding: 50px;
+        }
+        @include desktop {
+            padding: 55px;
+        }
+        @include tv {
+            padding: 40px;
+        }
+    }
+
+    .login-heading {
+        img {
+            margin: auto;
+        }
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        position: relative;
+        padding: 1px;
+    }
+
+    .failedLogin {
+        color: red;
+        padding: 10px;
+        border: 1px solid red;
+        font-size: 12px;
+        margin-bottom: 15px;
+        font-weight: 700;
+
+        .glyphicon {
+            padding-right: 5px;
+        }
+    }
+
+    #loginForm {
+        input {
+            & {
+                box-shadow: none;
+                border: 0;
+                border-bottom: 1px solid black;
+                border-radius: 0;
+                font-size: 1.2em;
+                margin-top: 25px;
+                height: 25px;
+            }
+            @include hover-state {
+                box-shadow: none;
+                border-color: #000;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 25px;
+            left: 10px;
+            opacity: 0.6;
+            font-size: 1.2em;
+            font-weight: 100;
+            transition: all 0.3s;
+        }
+
+        input.ng-not-empty + label,
+        input:focus + label {
+            top: 0;
+            left: -2px;
+            font-size: 1em;
+        }
+
+        .loginSubmit {
+            margin-top: 3em;
+            border-radius: 0;
+            margin-bottom: 1em;
+        }
+
+        .forgot-password {
+            text-align: center;
+        }
+    }
+
+    .login-footer {
+        margin-top: 1em;
+        color: darken( white,20%);
+
+        a {
+            & {
+                color: darken( white,20%);
+                position: relative;
+                padding-right: 5px;
+            }
+            @include tablet-all {
+                & + a:before {
+                    @include seperator(darken( white,20%));
+                    left: 0;
+                }
+
+                &+a {
+                    padding-left: 5px;
+                }
+            }
+            @include mobile {
+                & {
+                    display: block;
+                }
+            }
+        }
+
+        .rights {
+            color: darken( white,20%);;
+            text-decoration: none;
+            cursor: default;
+        }
+    }
+}

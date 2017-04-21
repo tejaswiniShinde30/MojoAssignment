@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+<div ng-controller="BasicController as ctrl">
+    <form class="basicForm roundedCorner" name="basicForm">
+         <label for="initiative_photo"><h1>Basic Info.</h1></label>
+              <div class="form-group">
+               <!-- <label for="title">Title</label>-->
+                <input type="text" class="form-control" id="title" placeholder="Title" required name ="title" ng-model="ctrl.basicInfo.title">
+              </div>
+
+            <div class="form-group">
+               <!-- <label for="description">Description</label>-->
+              <textarea class="form-control" rows="5" id="description" placeholder="Description" name = "desc" ng-model="ctrl.basicInfo.desc" required></textarea>
+            </div>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-success pull-right" ng-click="ctrl.gotoNextTab()" ng-disabled="basicForm.title.$invalid || basicForm.desc.$invalid">Next</button>
+            <!--<img src="../../images/login-bg.jpg" alt="dfnndjf">-->
+        </div>
+    </form>
+</div>

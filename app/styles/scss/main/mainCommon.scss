@@ -1,0 +1,146 @@
+@import "../common/common";
+
+#mainPage {
+    .btn,
+    input,
+    select {
+        border-radius: 0;
+    }
+
+    input,
+    select {
+        border-color: $input-border-color;
+        box-shadow: none;
+        @include hover-state {
+            border-color: $input-border-color;
+            box-shadow: none;
+            outline-color: $input-border-color;
+        }
+    }
+
+    .cursorPointer{
+      cursor: pointer;
+    }
+
+    .headerText {
+        font-weight: 100;
+    }
+    .user-name-container{
+      text-transform: capitalize;
+    }
+    .navRibbon{
+    border-top: 5px solid $brand-primary;
+    }
+
+    .commonSearchContainer {
+        .searchInput {
+            border-right-width: 0;
+            line-height: 1.5;
+
+        }
+
+        .primary-search-select-addon {
+            width: 23%;
+            padding : 0px;
+            background-color: $primary-search-bgc !important;
+            select {
+              box-shadow: none !important;
+              border-color: $primary-search-bgc;
+              outline: 0 !important;
+              background-color: $primary-search-bgc !important;
+            }
+        }
+
+        .primary-search-button-group {
+          width: 1%;
+        }
+
+        .searchAddon {
+            border-left-width: 0;
+            outline: 0;
+            @include hover-state {
+                background-color: white;
+                border-color: $input-border-color;
+                box-shadow: none;
+            }
+        }
+
+        .form-group {
+            background-color: $search-bgc;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .clearText {
+          padding: 7px;
+          a {
+            cursor: pointer;
+          }
+        }
+    }
+
+    .app-dashboard {
+        table {
+            thead {
+                th {
+                    background-color: $brand-info;
+                    color: white;
+                }
+
+            }
+        }
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: $grid-strip;
+        }
+
+        .table {
+            border: 1px solid $grid-border-color;
+            margin-bottom: 0;
+        }
+
+        .table tbody > tr > td,
+        .table tbody > tr > th,
+        .table tfoot > tr > td,
+        .table tfoot > tr > th,
+        .table thead > tr > td,
+        .table thead > tr > th {
+            border: 1px solid $grid-border-color;
+        }
+
+        .table thead > tr > th {
+            border-bottom: none;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .st-sort-ascent:after {
+            font-family: "Glyphicons Halflings";
+            content: "\e113";
+            color: white;
+            padding-right: 5px;
+            position: absolute;
+            right: 0;
+        }
+
+        .st-sort-descent:after {
+            font-family: "Glyphicons Halflings";
+            content: "\e114";
+            color: white;
+            padding-right: 5px;
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    .app-dashboard-pagination {
+        background-color: $pagination-bgc;
+        color: white;
+
+        .paginationItems {
+            text-align: right;
+            @include mobile {
+                text-align: center;
+            }
+        }
+    }
+}
